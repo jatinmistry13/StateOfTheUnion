@@ -1,0 +1,28 @@
+Pseudocode for Mapper
+------------------------------------------
+let map(k,v) = 
+	foreach document_as_line in sys.stdin:
+		docCount++ 
+		stripHTMLMarkup()
+		Split htmlData into words
+		foreach word in words:
+			emit(word_docCount, 1)
+
+
+Pseudocode for Mapper
+------------------------------------------
+let reduce(k,vals) = 
+	foreach v in vals:
+		sum = sum + v
+	addToDictionary(k, sum)
+calculateMinMaxAvg()
+	
+let addToDictionary(k, sum):
+	split k and add it to dictionary a list of year-wise count
+	
+let calculateMinMaxAvg():
+	foreach word in dctionary:
+		minimum = min(the list of values for that word)
+		maximum = max(the list of values for that word)
+		average = sum(the list of values for that word)/229.0
+		emit(word, minimum, maximum, average)

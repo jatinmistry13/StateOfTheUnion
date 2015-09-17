@@ -1,0 +1,70 @@
+Pseudocode for Mapper
+------------------------------------------
+let map(k,v) = 
+	foreach document_as_line in sys.stdin:
+		docCount++ 
+		stripHTMLMarkup()
+		Split htmlData into words
+		foreach word in words:
+			emit(word, 1_docCount)
+
+
+Pseudocode for Reducer
+------------------------------------------
+let reduce(k,vals) = 
+	foreach line in stdin:
+		split word and count
+		split "count_docCount"
+		make word_year as word_docCount
+		if word_year contains "year6":
+			addToExtraYear(word_year)
+		addToYearwiseDictionary(word_year, count)
+		addToDictionary(k, count)
+calculateStdDev()
+
+let addToExtraYear(k, count):
+	if !(word in wordcountExtraYear):
+		add it to wordcountExtraYear
+	else:
+		wordcountExtraYear[word] = wordcountExtraYear[word] + 1
+		
+let addToDictionary(k, count):
+	if !(word in wordcount):
+		add it to wordcount
+	else:
+		wordcount[word] = wordcount[word] + 1
+		
+let addToYearwiseDictionary(word_year, count):
+	if !(word_year in wordcountByYear):
+		add it to wordcountByYear
+	else:
+		wordcountByYear[word_year] = wordcountByYear[word_year] + 1
+	
+let calculateTwoStdDev():
+	foreach word in wordcount:
+		calculate average
+		get the slice of data from wordcountByYear which starts with "word_"
+		foreach slice in sliced data:
+			partialSquares = (slice-average)*(slice-average)
+			sumOfSquare += partialSquares
+		calculate stdDev = sqrt(sumOfSquare/5.0)
+	return(word, average, stdDev)
+	
+let calculateTwoStdDev():
+	calculateStdDev()
+	foreach word in wordcount:
+		get average
+		get StdDeviation
+		calculate TwoStdDeviation = average + 2*StdDeviation
+		get nExtraWordCount from wordcountExtraYear(word)
+		if nExtraWordCount > TwoStdDeviation:
+			emit(word, nExtraWordCount, average, StdDeviation, TwoStdDeviation)
+		
+		
+		
+		
+		
+		
+		
+		
+		

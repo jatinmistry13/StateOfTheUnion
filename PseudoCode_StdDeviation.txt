@@ -1,0 +1,51 @@
+Pseudocode for Mapper
+------------------------------------------
+let map(k,v) = 
+	foreach document_as_line in sys.stdin:
+		docCount++ 
+		stripHTMLMarkup()
+		Split htmlData into words
+		foreach word in words:
+			emit(word, 1_docCount)
+
+
+Pseudocode for Reducer
+------------------------------------------
+let reduce(k,vals) = 
+	foreach line in stdin:
+		split word and count
+		split "count_docCount"
+		make word_year as word_docCount
+		addToYearwiseDictionary(word_year, count)
+		addToDictionary(k, count)
+calculateStdDev()
+	
+let addToDictionary(k, count):
+	if !(word in dictionary):
+		add it to dictionary
+	else:
+		wordcount[word] = wordcount[word] + 1
+		
+let addToYearwiseDictionary(word_year, count):
+	if !(word_year in dictionary):
+		add it to dictionary
+	else:
+		wordcountByYear[word_year] = wordcountByYear[word_year] + 1
+	
+let calculateStdDev():
+	foreach word in wordcount:
+		calculate average
+		get the slice of data from wordcountByYear which starts with "word_"
+		foreach slice in sliced data:
+			partialSquares = (slice-average)*(slice-average)
+			sumOfSquare += partialSquares
+		calculate stdDev = sqrt(sumOfSquare/5.0)
+	emit(word, average, stdDev)
+		
+		
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,16 @@
+Pseudocode for Mapper with Stripped HTML
+------------------------------------------
+let map(k,v) = 
+	foreach document_as_line in sys.stdin:
+		stripHTMLMarkup()
+		Split htmlData into words
+		foreach word in words:
+			emit(word, 1)
+
+
+Pseudocode for Mapper with Stripped HTML
+------------------------------------------
+let reduce(k,vals) = 
+	foreach v in vals:
+		sum = sum + v
+	emit(k, sum)
