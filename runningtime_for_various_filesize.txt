@@ -70,6 +70,9 @@
 real	0m30.597s
 user	0m7.206s
 sys	0m0.521s
+
+----------------------------------------------------------------------------------------------------------------------------------
+
 15/02/16 20:26:53 INFO client.RMProxy: Connecting to ResourceManager at mri-head/192.168.1.254:8032
 15/02/16 20:26:55 INFO input.FileInputFormat: Total input paths to process : 1
 15/02/16 20:26:55 INFO mapreduce.JobSubmitter: number of splits:1
@@ -142,6 +145,9 @@ sys	0m0.521s
 real	0m30.491s
 user	0m7.259s
 sys	0m0.425s
+
+----------------------------------------------------------------------------------------------------------------------------------
+
 15/02/16 20:27:44 INFO client.RMProxy: Connecting to ResourceManager at mri-head/192.168.1.254:8032
 15/02/16 20:27:46 INFO input.FileInputFormat: Total input paths to process : 1
 15/02/16 20:27:46 INFO mapreduce.JobSubmitter: number of splits:1
@@ -214,6 +220,9 @@ sys	0m0.425s
 real	0m31.344s
 user	0m7.142s
 sys	0m0.441s
+
+----------------------------------------------------------------------------------------------------------------------------------
+
 15/02/16 20:28:36 INFO client.RMProxy: Connecting to ResourceManager at mri-head/192.168.1.254:8032
 15/02/16 20:28:38 INFO input.FileInputFormat: Total input paths to process : 1
 15/02/16 20:28:38 INFO mapreduce.JobSubmitter: number of splits:1
